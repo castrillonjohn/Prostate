@@ -8,110 +8,189 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Avenir', sans-serif;
+      color: #fff;
       margin: 0;
       background: #000;
-      color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1rem 1rem 2rem 1rem;
       position: relative;
-      padding-bottom: 5rem; /* Prevent content from overlapping at the bottom */
+    }
+
+    .logo {
+      max-width: 140px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 0.5rem auto;
+      display: block;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0.1rem auto 0.5rem auto;
+      max-width: 900px;
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 0.1;
+      margin: 1rem auto;
+      max-width: 600px;
+    }
+
+    h3 {
+      color: #fff;
+      font-style: italic;
+      font-size: 1.1rem;
+      font-weight: 200;
+      line-height: 1;
+      margin: 1rem auto;
+      max-width: 600px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 1rem;
+      line-height: 0.5;
+      margin: 1rem auto;
+      max-width: 700px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      justify-items: center;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      max-width: 500px;
+      margin: 1.5rem auto;
     }
 
-    .grid img {
-      width: 100%;
-      max-width: 160px;
-      height: auto;
-      border-radius: 8px;
+    .face {
+      background: #ddd;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: transform 0.2s;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    h1 {
-      font-size: 1.75rem;
-      line-height: 1.2;
-      margin: 1rem 0;
+    .face:hover {
+      transform: scale(1.05);
     }
 
-    .subtext {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin: 1rem 0;
-      padding: 0 1rem;
-    }
-
-    .highlight {
-      color: #ff4c4c;
+    .message {
+      margin-top: 1rem;
       font-weight: bold;
-      margin-top: 2rem;
+      color: #ff4c4c;
     }
 
-    .cta-button {
-      display: inline-block;
-      margin-top: 2rem;
-      background-color: #007bff;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1rem;
+    .cta {
+      margin-top: 1rem;
+    }
+
+    .cta a {
+      background: #0077cc;
+      color: white;
+      padding: 0.50rem 1rem;
+      border-radius: 7px;
       text-decoration: none;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      display: inline-block;
     }
 
-    @media (max-width: 600px) {
-      .grid {
-        gap: 0.5rem;
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem 1rem 2rem 1rem;
       }
 
-      .grid img {
-        max-width: 120px;
+      .logo {
+        max-width: 110px;
       }
 
       h1 {
         font-size: 1.5rem;
-        line-height: 1.2;
       }
 
-      .subtext {
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
         font-size: 0.95rem;
-        line-height: 1.5;
       }
 
-      .cta-button {
-        font-size: 1rem;
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.4rem;
+        max-width: 350px;
+      }
+
+      .cta {
         padding: 1rem;
+      }
+
+      .cta a {
+        margin-top: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="grid">
-    <img src="https://via.placeholder.com/160" alt="Portrait 1" />
-    <img src="https://via.placeholder.com/160" alt="Portrait 2" />
-    <img src="https://via.placeholder.com/160" alt="Portrait 3" />
-    <img src="https://via.placeholder.com/160" alt="Portrait 4" />
-    <img src="https://via.placeholder.com/160" alt="Portrait 5" />
-    <img src="https://via.placeholder.com/160" alt="Portrait 6" />
-    <img src="https://via.placeholder.com/160" alt="Portrait 7" />
-    <img src="https://via.placeholder.com/160" alt="Portrait 8" />
+  <!-- Logo -->
+  <img src="Zero logo.png" alt="Logo" class="logo" />
+
+  <!-- Headline Content -->
+  <h1>1 in 8 men will be diagnosed with prostate cancer</h1>
+  <h2>Which of these 8 men has it?</h2>
+  <h3>You have 3 tries.</h3>
+
+  <!-- Grid -->
+  <div class="grid" id="grid"></div>
+
+  <!-- Message -->
+  <div class="message" id="message"></div>
+
+  <!-- CTA Section -->
+  <div class="cta" id="cta" style="display: none">
+    <p>None of them has cancer. They're not real. They're AI-generated.</p>
+    <p>But you are real. And if you're 45 or older, it's time to get real about your health.</p>
+    <a href="#">Check your prostate now</a>
   </div>
 
-  <div class="highlight">Wrong again. But here's the truth…</div>
+  <!-- Script -->
+  <script>
+    const grid = document.getElementById("grid");
+    const message = document.getElementById("message");
+    const cta = document.getElementById("cta");
+    let tries = 0;
 
-  <p class="subtext">
-    None of them has cancer. They’re not real. They’re AI-generated.
-  </p>
-  <p class="subtext">
-    But you are real. And if you're 45 or older, it's time to get real about your health.
-  </p>
-
-  <a href="#" class="cta-button">Check your prostate now</a>
+    for (let i = 0; i < 8; i++) {
+      const face = document.createElement("div");
+      face.classList.add("face");
+      face.style.backgroundImage = `url('portrait${i + 1}.jpg')`;
+      face.onclick = () => {
+        tries++;
+        if (tries === 1) {
+          message.textContent = "Incorrect. Try again.";
+        } else if (tries === 2) {
+          message.textContent = "Nope. One last chance.";
+        } else {
+          message.textContent = "Wrong again. But here's the truth...";
+          cta.style.display = "block";
+        }
+      };
+      grid.appendChild(face);
+    }
+  </script>
 
 </body>
 </html>
