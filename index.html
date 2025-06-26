@@ -13,8 +13,7 @@
       background: #000;
       color: #fff;
       text-align: center;
-      padding: 2rem;
-      position: relative;
+      padding: 1.5rem 1rem 2rem;
     }
 
     .logo {
@@ -25,163 +24,75 @@
       z-index: 1000;
     }
 
-    h1 {
-      font-size: 2rem;
-      line-height: 1.1;
-      margin: 0.1rem auto 0.5rem auto;
-      max-width: 900px;
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
     }
 
     h2 {
-      font-size: 1.4rem;
-      line-height: 1.1;
-      margin: 1rem auto;
-      max-width: 600px;
-    }
-
-    h3 {
-      font-size: 1.4rem;
-      line-height: 1.1;
-      margin: 1rem auto;
-      max-width: 600px;
+      color: red;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
     }
 
     p {
       font-size: 1rem;
       line-height: 1.4;
-      margin: 1rem auto;
-      max-width: 700px;
+      margin: 0.2rem 0;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
-      max-width: 700px;
-      margin: 1.5rem auto;
-    }
-
-    .face {
-      background: #ddd;
-      aspect-ratio: 1 / 1;
-      position: relative;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: transform 0.2s;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .face:hover {
-      transform: scale(1.05);
-    }
-
-    .message {
-      margin-top: 1rem;
-      font-weight: bold;
-      color: #ff4c4c;
-    }
-
-    .cta {
-      margin-top: 1rem;
-      padding: 1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta a {
-      background: #0077cc;
+    .cta-button {
+      display: inline-block;
+      background-color: #007bff;
       color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 7px;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 1rem;
-      display: inline-block;
+      margin-top: 1.2rem;
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding: 4rem 1rem 2rem 1rem;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-        line-height: 1.1;
-      }
-
+    @media (min-width: 600px) {
       h2 {
-        font-size: 1rem;
-        line-height: 1.1;
-      }
-
-      h3 {
-        font-size: 1rem;
-        line-height: 1.1;
+        font-size: 1.5rem;
       }
 
       p {
-        font-size: 0.95rem;
-        line-height: 1.5;
+        font-size: 1.1rem;
       }
 
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-        max-width: 90%;
-      }
-
-      .cta p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-
-      .cta a {
-        margin-top: 1rem;
+      .image-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
 </head>
 <body>
-  <img src="Zero logo.png" alt="Logo" class="logo" />
-  <h1>1 in 8 men will be diagnosed with prostate cancer</h1>
-  <h2>Which of these 8 men has it?</h2>
-  <h3>You have 3 chances to guess.</h3>
 
-  <div class="grid" id="grid"></div>
-  <div class="message" id="message"></div>
+  <img src="logo.png" alt="Logo" class="logo" />
 
-  <div class="cta" id="cta" style="display: none">
-    <p>None of them has cancer. They're not real. They're AI-generated.</p>
-    <p>But you are real. And if you're 45 or older, it's time to get real about your health.</p>
-    <a href="#">Check your prostate now</a>
+  <div class="image-grid">
+    <img src="man1.jpg" alt="Man 1" />
+    <img src="man2.jpg" alt="Man 2" />
+    <img src="man3.jpg" alt="Man 3" />
+    <img src="man4.jpg" alt="Man 4" />
+    <img src="man5.jpg" alt="Man 5" />
+    <img src="man6.jpg" alt="Man 6" />
   </div>
 
-  <script>
-    const grid = document.getElementById("grid");
-    const message = document.getElementById("message");
-    const cta = document.getElementById("cta");
-    let tries = 0;
+  <h2>Wrong again. But here's the truth…</h2>
+  <p>None of them has cancer. They're not real.<br>They're AI-generated.</p>
+  <p>But you are real. And if you're 45 or older, it's<br>time to get real about your health.</p>
 
-    for (let i = 0; i < 8; i++) {
-      const face = document.createElement("div");
-      face.classList.add("face");
-      face.style.backgroundImage = `url('portrait${i + 1}.jpg')`;
-      face.onclick = () => {
-        tries++;
-        if (tries === 1) {
-          message.textContent = "Incorrect. Try again.";
-        } else if (tries === 2) {
-          message.textContent = "Nope. One last chance.";
-        } else {
-          message.textContent = "Wrong again. But here's the truth...";
-          cta.style.display = "block";
-        }
-      };
-      grid.appendChild(face);
-    }
-  </script>
+  <a href="#" class="cta-button">Check your prostate now</a>
+
 </body>
 </html>
