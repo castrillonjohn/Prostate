@@ -85,29 +85,43 @@
       margin-top: 1rem;
       display: inline-block;
     }
-      @media (max-width: 600px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-    }
-
-    h1, h2, p {
-      font-size: 1rem;
-      max-width: 90%;
-    }
-
-    .cta a {
-      width: 100%;
-      display: block;
-      margin: 1rem auto;
-    }
-
-    .logo {
-      height: 40px;
-      top: 0.5rem;
-      left: 0.5rem;
-    }
+      @media (max-width: 768px) {
+  body {
+    padding: 4rem 1rem 2rem 1rem;
   }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .face {
+    border-radius: 4px;
+    background-size: cover;
+    aspect-ratio: 1 / 1;
+  }
+
+  .cta {
+    padding: 1rem;
+  }
+
+  .cta a {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+}
   </style>
 </head>
 <body>
