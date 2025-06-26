@@ -13,26 +13,16 @@
       margin: 0;
       background: #000;
       text-align: center;
-      padding: 2rem;
+      padding: 1rem;
       position: relative;
     }
 
-    /* Sticky Header */
-    .site-header {
-      position: sticky;
-      top: 0;
-      background-color: #000;
-      z-index: 1000;
-      text-align: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid #333;
-    }
-
     .logo {
-      max-width: 150px;
+      max-width: 140px;
       width: 100%;
       height: auto;
-      margin: 0 auto;
+      margin: 0 auto 1rem auto;
+      display: block;
     }
 
     h1 {
@@ -74,9 +64,9 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      max-width: 650px;
-      margin: 2rem auto;
+      gap: 0.5rem;
+      max-width: 500px;
+      margin: 1.5rem auto;
     }
 
     .face {
@@ -110,105 +100,4 @@
       color: white;
       padding: 0.50rem 1rem;
       border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1.5rem;
-      display: inline-block;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 6rem 1rem 2rem 1rem;
-      }
-
-      .logo {
-        max-width: 120px;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-      }
-
-      p {
-        font-size: 0.95rem;
-      }
-
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-      }
-
-      .face {
-        border-radius: 4px;
-        background-size: cover;
-        aspect-ratio: 1 / 1;
-      }
-
-      .cta {
-        padding: 1rem;
-      }
-
-      .cta a {
-        display: inline-block;
-        margin-top: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Sticky Header -->
-  <header class="site-header">
-    <img src="Zero logo.png" alt="Logo" class="logo" />
-  </header>
-
-  <!-- Headline Content -->
-  <h1>1 in 8 men will be diagnosed with prostate cancer</h1>
-  <h2>Which of these 8 men has it?</h2>
-  <h3>You have 3 tries.</h3>
-
-  <!-- Grid -->
-  <div class="grid" id="grid"></div>
-
-  <!-- Message -->
-  <div class="message" id="message"></div>
-
-  <!-- CTA Section -->
-  <div class="cta" id="cta" style="display: none">
-    <p>None of them has cancer. They're not real. They're AI-generated.</p>
-    <p>But you are real. And if you're 45 or older, it's time to get real about your health.</p>
-    <a href="#">Check your prostate now</a>
-  </div>
-
-  <!-- Script -->
-  <script>
-    const grid = document.getElementById("grid");
-    const message = document.getElementById("message");
-    const cta = document.getElementById("cta");
-    let tries = 0;
-
-    for (let i = 0; i < 8; i++) {
-      const face = document.createElement("div");
-      face.classList.add("face");
-      face.style.backgroundImage = `url('portrait${i + 1}.jpg')`;
-      face.onclick = () => {
-        tries++;
-        if (tries === 1) {
-          message.textContent = "Incorrect. Try again.";
-        } else if (tries === 2) {
-          message.textContent = "Nope. One last chance.";
-        } else {
-          message.textContent = "Wrong again. But here's the truth...";
-          cta.style.display = "block";
-        }
-      };
-      grid.appendChild(face);
-    }
-  </script>
-
-</body>
-</html>
+      text-d
