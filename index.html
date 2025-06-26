@@ -13,36 +13,41 @@
       color: #fff;
       font-family: 'Inter', sans-serif;
       text-align: center;
-      padding: 1rem;
-      position: relative;
+      padding: 0;
     }
 
     .logo {
       position: absolute;
       top: 1rem;
-      left: 1rem;
+      left: 2%;
       height: 60px;
       z-index: 10;
     }
 
+    .container {
+      padding: 1rem;
+      padding-top: 6rem; /* pushes everything below logo */
+    }
+
     .image-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.4rem;
-      margin-top: 6rem; /* allow space for logo */
-      margin-bottom: 1.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.3rem;
+      max-width: 100%;
+      margin: 0 auto 1rem;
     }
 
     .image-grid img {
       width: 100%;
       height: auto;
+      display: block;
       border-radius: 4px;
     }
 
     h2 {
       color: #ff4d4d;
-      font-size: 1.3rem;
-      margin: 0.5rem 0 0.3rem;
+      font-size: 1.2rem;
+      margin: 0.5rem 0 0.2rem;
       line-height: 1.2;
     }
 
@@ -54,8 +59,8 @@
 
     .cta-button {
       display: inline-block;
-      margin-top: 1.2rem;
-      padding: 0.75rem 1.2rem;
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
       background-color: #007bff;
       color: white;
       text-decoration: none;
@@ -63,18 +68,17 @@
       font-weight: bold;
     }
 
-    @media (min-width: 600px) {
+    @media (max-width: 768px) {
       .image-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 per row on desktop */
-        margin-top: 5rem;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.1rem;
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -83,22 +87,24 @@
 
   <img src="logo.png" alt="Logo" class="logo" />
 
-  <div class="image-grid">
-    <img src="portrait1.jpg" alt="Portrait 1" />
-    <img src="portrait2.jpg" alt="Portrait 2" />
-    <img src="portrait3.jpg" alt="Portrait 3" />
-    <img src="portrait4.jpg" alt="Portrait 4" />
-    <img src="portrait5.jpg" alt="Portrait 5" />
-    <img src="portrait6.jpg" alt="Portrait 6" />
-    <img src="portrait7.jpg" alt="Portrait 7" />
-    <img src="portrait8.jpg" alt="Portrait 8" />
+  <div class="container">
+    <div class="image-grid">
+      <img src="portrait1.jpg" alt="Portrait 1" />
+      <img src="portrait2.jpg" alt="Portrait 2" />
+      <img src="portrait3.jpg" alt="Portrait 3" />
+      <img src="portrait4.jpg" alt="Portrait 4" />
+      <img src="portrait5.jpg" alt="Portrait 5" />
+      <img src="portrait6.jpg" alt="Portrait 6" />
+      <img src="portrait7.jpg" alt="Portrait 7" />
+      <img src="portrait8.jpg" alt="Portrait 8" />
+    </div>
+
+    <h2>Wrong again. But here's the truth…</h2>
+    <p>None of them has cancer. They're not real. They're AI-generated.</p>
+    <p>But you are real. And if you're 45 or older, it's time to get real about your health.</p>
+
+    <a href="#" class="cta-button">Check your prostate now</a>
   </div>
-
-  <h2>Wrong again. But here's the truth…</h2>
-  <p>None of them has cancer. They're not real. They're AI-generated.</p>
-  <p>But you are real. And if you're 45 or older, it's time to get real about your health.</p>
-
-  <a href="#" class="cta-button">Check your prostate now</a>
 
 </body>
 </html>
